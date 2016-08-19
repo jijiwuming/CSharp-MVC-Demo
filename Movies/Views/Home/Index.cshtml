@@ -7,14 +7,29 @@
 
 <html>
 <head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
 </head>
 <body>
-    <div> 
+    <div class="text-center">
         <h2>@ViewBag.Greeting</h2>
+        <p>We are going to having an exciting party.</p>
+    
+    <div class="btn btn-success">
+        @Html.ActionLink("RSVP", "RsvpForm")
     </div>
-    <p>We are going to having an exciting party.</p>
-    @Html.ActionLink("RSVP","RsvpForm")
+</div>
 </body>
 </html>
