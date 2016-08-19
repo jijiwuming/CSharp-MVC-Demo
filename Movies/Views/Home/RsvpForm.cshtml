@@ -1,0 +1,33 @@
+﻿@model Movies.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles.css" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <p>Your name:@Html.TextBoxFor(x=>x.Name)</p>
+        <p>Your Phone:@Html.TextBoxFor(x => x.Phone)</p>
+        <p>Your Email:@Html.TextBoxFor(x => x.Email)</p>
+        <p>will you attend?
+        @Html.DropDownListFor(x => x.WillAttend,new[] {
+       new SelectListItem() {Text="Yes,I'll be there",Value=bool.TrueString },
+       new SelectListItem() {Text="No,I can't go",Value=bool.FalseString }
+   },"choose an option")
+        </p>
+        <input type="submit" value="Submit Rsvp" />
+    }
+    <div> 
+    </div>
+</body>
+</html>
